@@ -2,7 +2,13 @@ import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
 import { Context } from '../../context/context'
-
+import { RiCompass3Line } from "react-icons/ri";
+import { FaRegLightbulb } from "react-icons/fa";
+import { FiMessageSquare } from "react-icons/fi";
+import { FaCode } from "react-icons/fa6";
+import { RiImageAddLine } from "react-icons/ri";
+import { FaMicrophone } from "react-icons/fa";
+import { AiOutlineSend } from "react-icons/ai";
 
 const Main = () => {
 
@@ -23,19 +29,19 @@ const Main = () => {
             <div className="cards">
                 <div className="card">
                     <p>Suggest beautiful places</p>
-                    <img src={assets.compass_icon} alt="" />
+                    <RiCompass3Line className='card-icon' />
+                </div>
+                <div className="card">
+                    <p>Quiz me about science fiction movies</p>
+                    <FaRegLightbulb className='card-icon' />
                 </div>
                 <div className="card">
                     <p>Suggest beautiful places</p>
-                    <img src={assets.bulb_icon} alt="" />
+                    <FiMessageSquare className='card-icon'/>
                 </div>
                 <div className="card">
                     <p>Suggest beautiful places</p>
-                    <img src={assets.message_icon} alt="" />
-                </div>
-                <div className="card">
-                    <p>Suggest beautiful places</p>
-                    <img src={assets.code_icon} alt="" />
+                    <FaCode className='card-icon' />
                 </div>
             </div>
             </>
@@ -45,7 +51,7 @@ const Main = () => {
                     <p>{recentPrompt}</p>
                 </div>
                 <div className="result-data">
-                    <img src={assets.gemini_icon} alt="" />
+                    <img className={loading ? "spin" : "result-data"} src={assets.gemini_icon} alt="" />
                     {loading?
                     <div className="loader">
                         <hr />
@@ -60,14 +66,14 @@ const Main = () => {
             
             <div className="main-bottom">
                 <div className="search-box">
-                    <input onChange={(e)=>setInput(e.target.value)} value={input} type="text"placeholder='Enter a prompt here.'/>
+                    <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here.'/>
                     <div>
-                        <img src={assets.gallery_icon} alt="" />
-                        <img src={assets.mic_icon} alt="" />
-                        {input?<img onClick={()=>onSent()} src={assets.send_icon} alt="" />:null}
+                    <RiImageAddLine className='search-box-image'/>
+                    <FaMicrophone className='search-box-image' />
+                        {input?<AiOutlineSend className='search-box-image' onClick={()=>onSent()} />:null}
                     </div>
                 </div>
-                <p className="bottom-info">Gemini may display incredible data.</p>
+                <p className="bottom-info">Gemini may display inaccurate info, including about people, so double-check its responses.</p>
             </div>
         </div>
     </div>

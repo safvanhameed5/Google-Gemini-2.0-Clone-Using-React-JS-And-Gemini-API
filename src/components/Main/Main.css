@@ -3,6 +3,7 @@
     min-height: 100vh;
     padding-bottom: 15vh;
     position: relative;
+    background-color: #1c1c1c;
 }
 
 .main .nav {
@@ -11,7 +12,7 @@
     justify-content: space-between;
     font-size: 22px;
     padding: 20px;
-    color: #585858;
+    color: #f8f8f8;
 }
 
 .main .nav img {
@@ -22,13 +23,13 @@
 .main-container {
     max-width: 900px;
     margin: auto;
-    
 }
 
 .main .greet {
     margin: 50px 0px;
+    margin-bottom: 0px;
     font-size: 56px;
-    color: #c4c7c5;
+    color: #3a3a3a;
     font-weight: 500;
     padding: 20px;
 }
@@ -49,29 +50,31 @@
 .main .card {
     height: 200px;
     padding: 15px;
-    background-color: #f0f4f9;
+    background-color: #262626;
     border-radius: 10px;
     position: relative;
     cursor: pointer;
 }
 
-.main .card img {
+.card-icon {
     width: 35px;
+    height: 35px;
     padding: 5px;
-    position: absolute;
-    background-color: white;
     border-radius: 20px;
+    position: absolute;
+    background-color: #1c1c1c;
+    color: #f8f8f8;
     bottom: 10px;
     right: 10px;
 }
 
 .main .card p{
-    color: #585858;
+    color: #f8f8f8;
     font-size: 17px;
 }
 
 .main .card:hover {
-    background-color: #dfe4ea;
+    background-color: #3a3a3a;
 }
 
 .main-bottom {
@@ -88,19 +91,21 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background-color: #f0f4f9;
+    background-color: #262626;
     padding: 10px 20px;
     border-radius: 50px;
 }
 
-.search-box img {
-    width: 24px;
+.search-box-image {
+    width: 30px;
     cursor: pointer;
+    color: #f8f8f8;
 }
 
 .search-box input {
     flex: 1;
     background: transparent;
+    color: #f8f8f8;
     border: none;
     outline: none;
     padding: 8px;
@@ -118,6 +123,7 @@
     margin: 15px auto;
     text-align: center;
     font-weight: 300;
+    color: #f8f8f8;
 }
 
 .result {
@@ -132,6 +138,7 @@
 
 .result-title {
     margin: 30px 0px;
+    color: #f8f8f8;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -148,6 +155,13 @@
     display: flex;
     align-items: start;
     gap: 10px;
+}
+
+.spin {
+    animation: spin;
+    animation-duration: 2500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .loader {
@@ -176,8 +190,18 @@
     }
 }
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 .result-data p{
     margin: 10px;
+    color: #f8f8f8;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.8;

@@ -2,6 +2,10 @@ import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/context";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdHelpCircleOutline } from "react-icons/io";
+import { IoIosTimer } from "react-icons/io";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
@@ -13,12 +17,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <img
-          onClick={() => setExtended((prev) => !prev)}
-          className="menu"
-          src={assets.menu_icon}
-          alt=""
-        />
+        <GiHamburgerMenu onClick={() => setExtended((prev) => !prev)} className="menu"/>
         <div className="new-chat">
           <img onClick={()=>newChat()} src={assets.plus_icon} alt="" />
           {extended ? <p>New Chat</p> : null}
@@ -39,15 +38,15 @@ const Sidebar = () => {
       </div>
       <div className="bottom">
         <div className="bottom-item recent-entry">
-          <img src={assets.question_icon} alt="" />
+        <IoMdHelpCircleOutline />
           {extended ? <p>Help</p> : null}
         </div>
         <div className="bottom-item recent-entry">
-          <img src={assets.history_icon} alt="" />
+        <IoIosTimer />
           {extended ? <p>Activity</p> : null}
         </div>
         <div className="bottom-item recent-entry">
-          <img src={assets.setting_icon} alt="" />
+        <IoSettingsSharp />
           {extended ? <p>Settings</p> : null}
         </div>
       </div>
